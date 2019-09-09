@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'raytrace.RayTrace'
+
+// An optional property used by the Java plugin
+// Will be used to version our jars
+version = '1.0.SNAPSHOT'
+
+jar {
+    baseName = 'raytrace'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.4.2')
+    testImplementation('com.pholser:junit-quickcheck-guava:0.9')
+    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.4.2')
+}
+
+test {
+    useJUnitPlatform()
+}
